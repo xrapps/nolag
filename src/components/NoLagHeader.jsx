@@ -15,7 +15,7 @@ export default function ({back = false}) {
       </TouchableOpacity>
 
       <TouchableOpacity
-        onPress={() => navigation.navigate('HomeFieldCartScreen')}>
+        onPress={() => navigation.navigate('NoLagCartScreen')}>
         <Image source={Cart} style={styles.image} />
       </TouchableOpacity>
     </View>

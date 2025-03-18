@@ -3,7 +3,7 @@ import {Dimensions} from 'react-native';
 export const COLORS = {
   black: '#191E1F',
   white: '#ffffff',
-  main: '#16423C',
+  main: '#3F7D58',
   background: '#2F2F2F',
   gray: '#DCDCDC',
   placeholder: '#999999',

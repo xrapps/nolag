@@ -7,7 +7,7 @@ import {
   View,
 } from 'react-native';
 import {COLORS, FONTS, height, width} from '../helpers/colors';
-import HomeFieldHeader from '../components/HomeFieldHeader';
+import NoLagHeader from '../components/NoLagHeader';
 import BackgroundImage from '../assets/background.png';
 
 export default function () {
@@ -26,63 +26,24 @@ export default function () {
 
   return (
     <ImageBackground source={BackgroundImage} style={styles.container}>
-      <HomeFieldHeader />
+      <NoLagHeader />
 
       <Text style={styles.title}>Трансляции</Text>
 
       <ScrollView
         style={{flex: 1}}
         contentContainerStyle={{paddingBottom: 100, marginTop: 15}}>
-        {renderBroadcast(
-          'ITTF World',
-          '04.05 13:00',
-          'Men’s Final \n' + 'Beijing',
-        )}
-        {renderBroadcast(
-          'WTT Grand',
-          '06.05 14:45',
-          'Women’s Semifinals \n' + 'Singapore',
-        )}
-        {renderBroadcast(
-          'Asian Champ',
-          '08.05 16:15',
-          'Doubles Final \n' + 'Jakarta',
-        )}
-        {renderBroadcast(
-          'European Champ',
-          '10.05 18:30',
-          'Mixed Doubles \n' + 'Berlin',
-        )}
-        {renderBroadcast(
-          'US Open',
-          '12.05 20:00',
-          'Quarterfinals \n' + 'Las Vegas',
-        )}
-        {renderBroadcast(
-          'Olympic Qual.',
-          '14.05 22:30',
-          'Round of 16 \n' + 'Tokyo',
-        )}
-        {renderBroadcast(
-          'Japan Open',
-          '16.05 15:45',
-          'Men’s Singles \n' + 'Yokohama',
-        )}
-        {renderBroadcast(
-          'German Open',
-          '18.05 17:15',
-          'Women’s Singles \n' + 'Düsseldorf',
-        )}
-        {renderBroadcast(
-          'African',
-          '20.05 19:00',
-          'Final Match \n' + 'Cape Town',
-        )}
-        {renderBroadcast(
-          'Pan Cup',
-          '22.05 21:30',
-          'Gold Medal Match \n' + 'São Paulo',
-        )}
+        {renderBroadcast('ITTF World Cup', '01.04 16:00', 'Ma Long \n' + 'Fan Zhendong')}
+        {renderBroadcast('European Championship', '04.04 18:30', 'Timo Boll \n' + 'Dimitrij Ovtcharov')}
+        {renderBroadcast('Asian Cup', '07.04 20:00', 'Jun Mizutani \n' + 'Xu Xin')}
+        {renderBroadcast('Pan American Games', '10.04 17:45', 'Hugo Calderano \n' + 'Kanak Jha')}
+        {renderBroadcast('World Tour Finals', '13.04 21:00', 'Chen Meng \n' + 'Mima Ito')}
+        {renderBroadcast('Olympic Qualifier', '16.04 19:15', 'Tomokazu Harimoto \n' + 'Wang Chuqin')}
+        {renderBroadcast('Commonwealth Games', '19.04 16:30', 'Liam Pitchford \n' + 'Quadri Aruna')}
+        {renderBroadcast('African Championship', '22.04 20:00', 'Omar Assar \n' + 'Ahmed Saleh')}
+        {renderBroadcast('Junior World Cup', '25.04 17:45', 'Lin Yun-Ju \n' + 'Kristian Karlsson')}
+        {renderBroadcast('Mixed Doubles Final', '28.04 19:00', 'Xu Xin/Sun Yingsha \n' + 'Mizutani/Ito')}
+
       </ScrollView>
     </ImageBackground>
   );
@@ -141,7 +102,7 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     marginVertical: 20,
     fontFamily: FONTS.bold,
-    color: COLORS.main,
+    color: COLORS.white,
     paddingVertical: 5,
   },
 });

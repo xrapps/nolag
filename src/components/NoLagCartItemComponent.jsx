@@ -3,9 +3,9 @@ import {Image, StyleSheet, Text, TouchableOpacity, View} from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import {AppContext} from './AppContext';
 import {COLORS, FONTS, width} from '../helpers/colors';
-import {pastaApp1} from '../assets/products';
+import {steakApp5} from '../assets/products';
 
-const HomeFieldCartItemComponent = ({item}) => {
+const NoLagCartItemComponent = ({item}) => {
   const {shouldRefresh, toggleRefresh} = useContext(AppContext);
   const [carts, setCarts] = useState([]);
 
@@ -49,7 +49,7 @@ const HomeFieldCartItemComponent = ({item}) => {
     fetchCartItems();
   }, [shouldRefresh]);
 
-  const productImage = pastaApp1.find(p => p.name === item.name)?.image;
+  const productImage = steakApp5.find(p => p.name === item.name)?.image;
 
   return (
     <View style={styles.container}>
@@ -177,4 +177,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default HomeFieldCartItemComponent;
+export default NoLagCartItemComponent;

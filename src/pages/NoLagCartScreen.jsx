@@ -9,9 +9,9 @@ import {
 import {useNavigation} from '@react-navigation/native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import {AppContext} from '../components/AppContext';
-import HomeFieldCartItemComponent from '../components/HomeFieldCartItemComponent';
-import HomeFieldComponent from '../components/HomeFieldComponent';
-import HomeFieldHeader from '../components/HomeFieldHeader';
+import NoLagCartItemComponent from '../components/NoLagCartItemComponent';
+import NoLagComponent from '../components/NoLagComponent';
+import NoLagHeader from '../components/NoLagHeader';
 import {COLORS, FONTS, height, width} from '../helpers/colors';
 import BackgroundImage from '../assets/background.png';
 
@@ -40,8 +40,8 @@ export default function () {
 
   const handleOrder = () => {
     const destinationScreen = cart.length
-      ? 'HomeFieldCartSuccessScreen'
-      : 'HomeFieldHomeScreen';
+      ? 'NoLagCartSuccessScreen'
+      : 'NoLagHomeScreen';
     navigation.navigate('DrawerNavigator', {screen: destinationScreen});
     AsyncStorage.setItem('cartList', JSON.stringify([]));
     toggleRefresh(!shouldRefresh);
@@ -49,7 +49,7 @@ export default function () {
 
   return (
     <ImageBackground source={BackgroundImage} style={styles.container}>
-      <HomeFieldHeader />
+      <NoLagHeader />
 
       {!cart.length && (
         <>
@@ -62,7 +62,7 @@ export default function () {
           <View style={{height: height * 0.7}}>
             <ScrollView style={styles.flex} contentContainerStyle={styles.main}>
               {cart.map((item, index) => (
-                <HomeFieldCartItemComponent item={item} key={index} />
+                <NoLagCartItemComponent item={item} key={index} />
               ))}
             </ScrollView>
           </View>
@@ -78,7 +78,7 @@ export default function () {
         ''
       )}
 
-      <HomeFieldComponent
+      <NoLagComponent
         text={cart.length ? `ЗАКАЗАТЬ` : 'На главную'}
         style={styles.orderButton}
         onPress={handleOrder}
@@ -132,13 +132,13 @@ const styles = StyleSheet.create({
   sumTitle: {
     fontSize: 25,
     fontFamily: FONTS.black,
-    color: COLORS.main,
+    color: COLORS.white,
     textAlign: 'center',
   },
   sum: {
     fontSize: 30,
     fontFamily: FONTS.bold,
-    color: COLORS.main,
+    color: COLORS.white,
     textAlign: 'center',
     marginLeft: 20,
   },

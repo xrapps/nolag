@@ -12,13 +12,13 @@ import {
   View,
 } from 'react-native';
 import {COLORS, FONTS} from './helpers/colors';
-import HomeFieldHomeScreen from './pages/HomeFieldHomeScreen';
-import HomeFieldCartScreen from './pages/HomeFieldCartScreen';
-import HomeFieldCartSuccessScreen from './pages/HomeFieldCartSuccessScreen';
-import HomeFieldReservationScreen from './pages/HomeFieldReservationScreen';
-import HomeFieldReservationSuccessScreen from './pages/HomeFieldReserveSuccessScreen';
-import HomeFieldContactsScreen from './pages/HomeFieldContactsScreen';
-import HomeFieldTranslationsScreen from './pages/HomeFieldTranslationsScreen';
+import NoLagHomeScreen from './pages/NoLagHomeScreen';
+import NoLagCartScreen from './pages/NoLagCartScreen';
+import NoLagCartSuccessScreen from './pages/NoLagCartSuccessScreen';
+import NoLagReservationScreen from './pages/NoLagReservationScreen';
+import NoLagReservationSuccessScreen from './pages/NoLagReserveSuccessScreen';
+import NoLagContactsScreen from './pages/NoLagContactsScreen';
+import NoLagTranslationsScreen from './pages/NoLagTranslationsScreen';
 import CloseIcon from './assets/close_icon.png';
 import CartIcon from './assets/cart_icon.png';
 import Logo from './assets/logo.png';
@@ -61,10 +61,10 @@ function CustomDrawerContent(props) {
   const navigation = useNavigation();
 
   const drawerItems = [
-    {label: 'ГЛАВНАЯ', screen: 'HomeFieldHomeScreen'},
-    {label: 'ТРАНСЛЯЦИИ', screen: 'HomeFieldTranslationsScreen'},
-    {label: 'КОНТАКТЫ', screen: 'HomeFieldContactsScreen'},
-    {label: 'РЕЗЕРВ СТОЛИКА', screen: 'HomeFieldReservationScreen'},
+    {label: 'ГЛАВНАЯ', screen: 'NoLagHomeScreen'},
+    {label: 'ТРАНСЛЯЦИИ', screen: 'NoLagTranslationsScreen'},
+    {label: 'КОНТАКТЫ', screen: 'NoLagContactsScreen'},
+    {label: 'РЕЗЕРВ СТОЛИКА', screen: 'NoLagReservationScreen'},
   ];
 
   const navigateToScreen = screen => {
@@ -92,7 +92,7 @@ function CustomDrawerContent(props) {
           </TouchableOpacity>
         ))}
       </View>
-      <TouchableOpacity onPress={() => navigateToScreen('HomeFieldCartScreen')}>
+      <TouchableOpacity onPress={() => navigateToScreen('NoLagCartScreen')}>
         <Image source={CartIcon} style={styles.cartIcon} />
       </TouchableOpacity>
     </ImageBackground>
@@ -100,24 +100,24 @@ function CustomDrawerContent(props) {
 }
 
 const drawerScreens = [
-  {name: 'HomeFieldHomeScreen', component: HomeFieldHomeScreen},
-  {name: 'HomeFieldCartScreen', component: HomeFieldCartScreen},
+  {name: 'NoLagHomeScreen', component: NoLagHomeScreen},
+  {name: 'NoLagCartScreen', component: NoLagCartScreen},
   {
-    name: 'HomeFieldCartSuccessScreen',
-    component: HomeFieldCartSuccessScreen,
+    name: 'NoLagCartSuccessScreen',
+    component: NoLagCartSuccessScreen,
   },
   {
-    name: 'HomeFieldReservationScreen',
-    component: HomeFieldReservationScreen,
+    name: 'NoLagReservationScreen',
+    component: NoLagReservationScreen,
   },
   {
-    name: 'HomeFieldReservationSuccessScreen',
-    component: HomeFieldReservationSuccessScreen,
+    name: 'NoLagReservationSuccessScreen',
+    component: NoLagReservationSuccessScreen,
   },
-  {name: 'HomeFieldContactsScreen', component: HomeFieldContactsScreen},
+  {name: 'NoLagContactsScreen', component: NoLagContactsScreen},
   {
-    name: 'HomeFieldTranslationsScreen',
-    component: HomeFieldTranslationsScreen,
+    name: 'NoLagTranslationsScreen',
+    component: NoLagTranslationsScreen,
   },
 ];
 

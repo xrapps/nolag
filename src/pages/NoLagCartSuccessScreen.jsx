@@ -10,20 +10,20 @@ import {
 import {COLORS, FONTS, height, width} from '../helpers/colors';
 import QRCode from 'react-native-qrcode-svg';
 import {useNavigation} from '@react-navigation/native';
-import HomeFieldHeader from '../components/HomeFieldHeader';
-import HomeFieldComponent from '../components/HomeFieldComponent';
+import NoLagHeader from '../components/NoLagHeader';
+import NoLagComponent from '../components/NoLagComponent';
 import BackgroundImage from '../assets/background.png';
 
 export default function () {
   const navigation = useNavigation();
 
   const handleNavigateHome = () => {
-    navigation.navigate('DrawerNavigator', {screen: 'HomeFieldHomeScreen'});
+    navigation.navigate('DrawerNavigator', {screen: 'NoLagHomeScreen'});
   };
 
   return (
     <ImageBackground source={BackgroundImage} style={styles.container}>
-      <HomeFieldHeader />
+      <NoLagHeader />
 
       <Text style={styles.text}>Спасибо за заказ!</Text>
 
@@ -41,7 +41,7 @@ export default function () {
         />
       </View>
 
-      <HomeFieldComponent
+      <NoLagComponent
         text="На главную"
         style={styles.button}
         onPress={handleNavigateHome}
@@ -73,7 +73,7 @@ const styles = StyleSheet.create({
     alignSelf: 'center',
   },
   text: {
-    color: COLORS.main,
+    color: COLORS.white,
     textAlign: 'center',
     fontFamily: FONTS.black,
     fontSize: 40,

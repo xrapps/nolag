@@ -8,14 +8,14 @@ import {
 } from 'react-native';
 import {COLORS, FONTS, height, width} from '../helpers/colors';
 import {useNavigation} from '@react-navigation/native';
-import HomeFieldHeader from '../components/HomeFieldHeader';
-import HomeFieldComponent from '../components/HomeFieldComponent';
+import NoLagHeader from '../components/NoLagHeader';
+import NoLagComponent from '../components/NoLagComponent';
 import BackgroundImage from '../assets/background.png';
 
 const InputField = ({placeholder, value, onChangeText}) => (
   <TextInput
     style={styles.textInput}
-    placeholderTextColor={COLORS.main}
+    placeholderTextColor={COLORS.white}
     placeholder={placeholder}
     value={value}
     onChangeText={onChangeText}
@@ -42,13 +42,13 @@ export default function () {
 
   const handleReservation = () => {
     navigation.navigate('DrawerNavigator', {
-      screen: 'HomeFieldReservationSuccessScreen',
+      screen: 'NoLagReservationSuccessScreen',
     });
   };
 
   return (
     <ImageBackground source={BackgroundImage} style={styles.container}>
-      <HomeFieldHeader />
+      <NoLagHeader />
 
       <Text style={styles.title}>Резерв столика</Text>
 
@@ -83,7 +83,7 @@ export default function () {
           onChangeText={text => handleInputChange('date', text)}
         />
 
-        <HomeFieldComponent
+        <NoLagComponent
           text={'Зарезервировать'}
           style={styles.button}
           onPress={handleReservation}
@@ -108,7 +108,7 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     marginVertical: 20,
     fontFamily: FONTS.bold,
-    color: COLORS.main,
+    color: COLORS.white,
     paddingVertical: 5,
   },
   main: {
@@ -125,12 +125,12 @@ const styles = StyleSheet.create({
     fontSize: 14,
     fontFamily: FONTS.bold,
     textAlign: 'left',
-    color: COLORS.main,
+    color: COLORS.white,
     paddingLeft: 20,
     marginTop: 10,
     borderRadius: 15,
     borderBottomWidth: 1,
-    borderColor: COLORS.main,
+    borderColor: COLORS.white,
   },
   button: {
     marginTop: 50,

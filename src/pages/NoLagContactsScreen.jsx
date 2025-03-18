@@ -9,15 +9,15 @@ import {
 } from 'react-native';
 import {COLORS, FONTS, height, width} from '../helpers/colors';
 import {useNavigation} from '@react-navigation/native';
-import HomeFieldHeader from '../components/HomeFieldHeader';
-import HomeFieldComponent from '../components/HomeFieldComponent';
+import NoLagHeader from '../components/NoLagHeader';
+import NoLagComponent from '../components/NoLagComponent';
 import BackgroundImage from '../assets/background.png';
 
 export default function () {
   const navigation = useNavigation();
 
   const handleNavigateHome = () => {
-    navigation.navigate('DrawerNavigator', {screen: 'HomeFieldHomeScreen'});
+    navigation.navigate('DrawerNavigator', {screen: 'NoLagHomeScreen'});
   };
 
   const renderTextInput = placeholder => (
@@ -25,7 +25,7 @@ export default function () {
       <TextInput
         placeholder={placeholder}
         style={styles.textInput}
-        placeholderTextColor={COLORS.main}
+        placeholderTextColor={COLORS.white}
         editable={false}
       />
     </View>
@@ -33,7 +33,7 @@ export default function () {
 
   return (
     <ImageBackground source={BackgroundImage} style={styles.container}>
-      <HomeFieldHeader />
+      <NoLagHeader />
 
       <Text style={styles.title}>Контакты</Text>
 
@@ -43,7 +43,7 @@ export default function () {
         {renderTextInput('Данные')}
         {renderTextInput('Индекс')}
 
-        <HomeFieldComponent
+        <NoLagComponent
           text="На главную"
           style={styles.button}
           onPress={handleNavigateHome}
@@ -68,7 +68,7 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     marginVertical: 20,
     fontFamily: FONTS.bold,
-    color: COLORS.main,
+    color: COLORS.white,
     paddingVertical: 5,
   },
   subtitle: {
@@ -98,12 +98,12 @@ const styles = StyleSheet.create({
     fontSize: 14,
     fontFamily: FONTS.bold,
     textAlign: 'left',
-    color: COLORS.main,
+    color: COLORS.white,
     paddingLeft: 20,
     marginTop: 10,
     borderRadius: 15,
     borderBottomWidth: 1,
-    borderColor: COLORS.main,
+    borderColor: COLORS.white,
   },
   button: {
     marginTop: 50,
